@@ -1,25 +1,28 @@
-#include<stdio.h>
 
-int main(){
-    int n;
-    printf("Enter the size of array: ");
+#include <stdio.h>
+
+int main() {
+    int n, i, largest;
+
+    printf("Enter array size: ");
     scanf("%d", &n);
+
     int a[n];
-    int largest = a[0];
-    printf("Enter the elements of the array: ");
-    for(int i=0; i<n; i++){
+
+    for (i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &a[i]);
     }
 
-    for(int i=0; i<n; i++){
-        if(largest < a[i]){
+    largest = a[0];
+
+    for (i = 1; i < n; i++) {
+        if (a[i] > largest) {
             largest = a[i];
         }
     }
-    printf("The largest element is: %d", largest);
 
+    printf("\nLargest element: %d\n", largest);
 
-return 0;
+    return 0;
 }
-
-
