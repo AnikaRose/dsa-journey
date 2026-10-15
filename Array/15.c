@@ -1,25 +1,18 @@
-
 #include <stdio.h>
-
-int main() {
-    char str[200];
-    int i, j = 0;
-
+int main(){
+    char s[200];
+    char a[200];  // single array will also work
+    int i,j=0;
     printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-
-    for (i = 0; str[i] != '\0'; i++) {
-        if ((str[i] >= 'A' && str[i] <= 'Z') ||
-            (str[i] >= 'a' && str[i] <= 'z')) {
-            str[j] = str[i];
+    fgets(s, sizeof(s), stdin); // other approach: scanf("%s", s);
+    for(i=0; s[i]!='\0'; i++){
+        if((s[i]>= 'A' && s[i]<= 'Z') || s[i]>= 'a' && s[i]<= 'z'){
+            a[j] = s[i];
             j++;
         }
     }
+     a[j] = '\0';
 
-    str[j] = '\0';
-
-    printf("String after removing other characters: %s\n", str);
-
+    printf("\nString after removing other characters: %s", a);
     return 0;
 }
-
